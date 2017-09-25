@@ -8,3 +8,4 @@ System.out.println("hello ya");
 openTrace("C", "paramsinline.log");
 traceln("C","hhh")
 ENDRULE
+
