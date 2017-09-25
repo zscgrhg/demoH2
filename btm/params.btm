@@ -1,0 +1,10 @@
+RULE rule1
+CLASS HomeController
+METHOD hello
+AT ENTRY
+IF true
+DO
+System.out.println("hello ya");
+openTrace("C", "paramsinline.log");
+traceln("C","hhh")
+ENDRULE
