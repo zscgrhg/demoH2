@@ -1,11 +1,15 @@
-RULE rule1
+HELPER com.example.demo.UltraHelper
+
+
+RULE test invoke
 CLASS HomeController
 METHOD hello
-AT ENTRY
+BIND  h:Hellowords=new Hellowords("origTTTTyyy");
+ h1:Hellowords=null;
 IF true
 DO
-System.out.println("hello ya");
-openTrace("C", "paramsinline.log");
-traceln("C","hhh")
+wel();
+
+return new Hellowords("惺惺惜惺惺");
 ENDRULE
 
