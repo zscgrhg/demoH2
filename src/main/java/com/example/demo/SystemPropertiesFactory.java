@@ -13,7 +13,7 @@ import java.net.ServerSocket;
 public class SystemPropertiesFactory implements BeanFactoryPostProcessor ,Ordered {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.setProperty("server.port",String.valueOf(findFreeSocketPort()));
+        setIfAbsent("server.port",String.valueOf(findFreeSocketPort()));
     }
 
     @Override
@@ -29,4 +29,11 @@ public class SystemPropertiesFactory implements BeanFactoryPostProcessor ,Ordere
             throw new RuntimeException(e);
         }
     }
+
+    public static void setIfAbsent(String key, String value){
+        if(System.getProperty(key)==null){
+            System.setProperty(key,value);
+        }
+    }
+
 }
